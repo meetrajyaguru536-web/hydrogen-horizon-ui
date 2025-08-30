@@ -2,11 +2,13 @@ import { useState } from 'react';
 import { motion } from 'framer-motion';
 import TabButton from '@/components/TabButton';
 import LoginButton from '@/components/LoginButton';
+import LoginModal from '@/components/LoginModal';
 import InteractiveMap from '@/components/InteractiveMap';
 import bgImage from '@/assets/green-hydrogen-bg.jpg';
 
 const Index = () => {
   const [activeTab, setActiveTab] = useState<'potential' | 'existing'>('potential');
+  const [isLoginModalOpen, setIsLoginModalOpen] = useState(false);
 
   return (
     <div 
@@ -22,7 +24,13 @@ const Index = () => {
       <div className="absolute inset-0 bg-gradient-to-br from-black/40 via-black/20 to-black/50" />
       
       {/* Login Button */}
-      <LoginButton />
+      <LoginButton onClick={() => setIsLoginModalOpen(true)} />
+      
+      {/* Login Modal */}
+      <LoginModal 
+        isOpen={isLoginModalOpen} 
+        onClose={() => setIsLoginModalOpen(false)} 
+      />
       
       {/* Main Content */}
       <div className="relative z-10 min-h-screen flex flex-col items-center justify-center px-4">

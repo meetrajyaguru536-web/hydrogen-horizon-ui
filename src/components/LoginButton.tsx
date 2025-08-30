@@ -1,10 +1,15 @@
 import { motion } from 'framer-motion';
 import { User } from 'lucide-react';
 
-const LoginButton = () => {
+interface LoginButtonProps {
+  onClick: () => void;
+}
+
+const LoginButton = ({ onClick }: LoginButtonProps) => {
   return (
     <motion.button
-      className="fixed top-6 right-6 z-50 px-6 py-3 rounded-full font-semibold
+      onClick={onClick}
+      className="fixed top-6 right-6 z-40 px-6 py-3 rounded-full font-semibold
                  bg-gradient-button text-white shadow-button
                  backdrop-blur-md border border-white/20
                  hover:shadow-glow transition-all duration-300
