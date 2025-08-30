@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { motion } from 'framer-motion';
 import TabButton from '@/components/TabButton';
 import LoginButton from '@/components/LoginButton';
-import MapPlaceholder from '@/components/MapPlaceholder';
+import InteractiveMap from '@/components/InteractiveMap';
 import bgImage from '@/assets/green-hydrogen-bg.jpg';
 
 const Index = () => {
@@ -65,8 +65,8 @@ const Index = () => {
           </TabButton>
         </motion.div>
 
-        {/* Map Placeholder */}
-        <MapPlaceholder />
+        {/* Interactive Map */}
+        <InteractiveMap activeTab={activeTab} />
         
         {/* Footer */}
         <motion.div
